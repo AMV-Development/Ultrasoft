@@ -1,6 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SolucionVS",
+    "\\SolucionVS\\CapaPresentacion"
   ],
+  "SelectedNode": "\\SolucionVS\\CapaPresentacion\\frmEmpleado.cs",
   "PreviewInSolutionExplorer": false
 }
