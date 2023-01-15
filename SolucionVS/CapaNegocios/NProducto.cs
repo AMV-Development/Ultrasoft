@@ -17,9 +17,9 @@ namespace CapaNegocios
             this.dProducto = new DProducto();
         }
 
-        public DataTable ObtenerProductos(string nombre)
-        {
-            return dProducto.ObtenerProductos(nombre);
-        }
+        //public DataTable ObtenerProductos(string nombre)
+        //{
+        //    return dProducto.ObtenerProductos(nombre);
+        //}
     }
 }

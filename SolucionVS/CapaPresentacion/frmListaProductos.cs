@@ -31,7 +31,7 @@ namespace CapaPresentacion
         {
             try
             {
-                this.dgvListaProductos.DataSource = nProducto.ObtenerProductos(txtBuscarProducto.Text);
+                //this.dgvListaProductos.DataSource = nProducto.ObtenerProductos(txtBuscarProducto.Text);
             } catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);

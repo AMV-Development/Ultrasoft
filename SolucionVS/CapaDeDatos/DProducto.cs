@@ -15,7 +15,7 @@ namespace CapaDeDatos
             this.conexion= new CDConexion();
         }
 
-        public DataTable ObtenerProductos(string nombre)
+        /*public DataTable ObtenerProductos(string nombre)
         {
             try
             {
@@ -30,6 +30,6 @@ namespace CapaDeDatos
             {
                 return null;
             }
-        }
+        }*/
     }
 }
