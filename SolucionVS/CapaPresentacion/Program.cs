@@ -19,7 +19,7 @@ namespace CapaPresentacion
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new Logim());
             //Application.Run(new Inicio());
-            Application.Run(new frmEmpleado());
+            Application.Run(new frmCompras());
         }
     }
 }

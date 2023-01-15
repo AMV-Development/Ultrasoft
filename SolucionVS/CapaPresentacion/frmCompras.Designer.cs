@@ -41,7 +41,6 @@
             this.label12 = new System.Windows.Forms.Label();
             this.cbxMetrica = new System.Windows.Forms.ComboBox();
             this.txtCantidad = new System.Windows.Forms.TextBox();
-            this.txtDniCliente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.lblNumFactura = new System.Windows.Forms.Label();
@@ -59,6 +58,7 @@
             this.Unidades_Bruto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Unidades_Neto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Metrica = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).BeginInit();
             this.SuspendLayout();
             // 
@@ -198,14 +198,6 @@
             this.txtCantidad.Name = "txtCantidad";
             this.txtCantidad.Size = new System.Drawing.Size(94, 24);
             this.txtCantidad.TabIndex = 53;
-            // 
-            // txtDniCliente
-            // 
-            this.txtDniCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDniCliente.Location = new System.Drawing.Point(131, 78);
-            this.txtDniCliente.Name = "txtDniCliente";
-            this.txtDniCliente.Size = new System.Drawing.Size(316, 26);
-            this.txtDniCliente.TabIndex = 43;
             // 
             // label5
             // 
@@ -351,11 +343,21 @@
             this.Metrica.HeaderText = "Métrica";
             this.Metrica.Name = "Metrica";
             // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(131, 78);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(316, 26);
+            this.comboBox1.TabIndex = 72;
+            // 
             // frmCompras
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1255, 538);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.dtpFechaVenta);
@@ -369,7 +371,6 @@
             this.Controls.Add(this.label12);
             this.Controls.Add(this.cbxMetrica);
             this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.txtDniCliente);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.lblNumFactura);
@@ -383,6 +384,7 @@
             this.Controls.Add(this.txtPrecio);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmCompras";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCompras";
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleVenta)).EndInit();
             this.ResumeLayout(false);
@@ -405,7 +407,6 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox cbxMetrica;
         private System.Windows.Forms.TextBox txtCantidad;
-        private System.Windows.Forms.TextBox txtDniCliente;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lblNumFactura;
@@ -423,5 +424,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidades_Bruto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Unidades_Neto;
         private System.Windows.Forms.DataGridViewTextBoxColumn Metrica;
+        private System.Windows.Forms.ComboBox comboBox1;
     }
 }
