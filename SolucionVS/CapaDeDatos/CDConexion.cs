@@ -15,7 +15,6 @@ namespace CapaDeDatos
         string servidor;
         string Usuario;
         string clave;
-        string cADENA;
         string baseDeDatos;
         DataSet sqlDS;
         SqlCommand sqlCom;
@@ -64,7 +63,7 @@ namespace CapaDeDatos
         }
         
         //Metodo para consultar datos, solicita el texto de la consulta y la coleccion de parametros
-        public DataTable ConsultarDatosTexto(string consulta, SqlParameterCollection parametros)
+        public DataTable ConsultarDatosTexto(string consulta, List<SqlParameter> parametros)
         {
             DataTable data = new DataTable();
             try
@@ -90,7 +89,7 @@ namespace CapaDeDatos
         }
 
         //Metodo para consultar datos, solicita el nombre del procedimiento y la coleccion de parametros
-        public DataTable ConsultarDatosProcedimiento(string procedimiento, SqlParameterCollection parametros)
+        public DataTable ConsultarDatosProcedimiento(string procedimiento, List<SqlParameter> parametros)
         {
             DataTable data = new DataTable();
             try
@@ -117,7 +116,7 @@ namespace CapaDeDatos
 
         //Metodo ejecutar instrucciones de una consulta
         //Solicita el texto de la consulta y la coleccion de parametros
-        public int EjecutarConsultaTexto(string consulta, SqlParameterCollection parametros)
+        public int EjecutarConsultaTexto(string consulta, List<SqlParameter> parametros)
         {
             try
             {
@@ -140,7 +139,7 @@ namespace CapaDeDatos
 
         //Metodo ejecutar instrucciones de una consulta
         //Solicita el nombre del procedimiento y la coleccion de parametros
-        public int EjecutarConsultaProcedimiento(string procedimiento, SqlParameterCollection parametros)
+        public int EjecutarConsultaProcedimiento(string procedimiento, List<SqlParameter> parametros)
         {
             try
             {
