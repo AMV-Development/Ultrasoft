@@ -22,14 +22,14 @@ namespace CapaPresentacion
 
         private void BtnVerificaCliente_Click(object sender, EventArgs e)
         {
-            MostrarCliente();
+           // MostrarCliente();
         }
 
-        private void MostrarCliente()
+       /* private void MostrarCliente()
         {
             this.dgvDatosCliente.DataSource = _NCliente_Proveedor.Mostrar(txtDniCliente.Text);
             dgvDatosCliente.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
+        }*/
 
         private void CbxProducto_SelectedIndexChanged(object sender, EventArgs e)
         {

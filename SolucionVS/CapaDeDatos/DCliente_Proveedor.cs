@@ -57,149 +57,77 @@ namespace CapaDeDatos
         public string Tipo_Entidad { get => _Tipo_Entidad; set => _Tipo_Entidad = value; }
         public char Habilitado { get => _Habilitado; set => _Habilitado = value; }
 
-        public DataTable MostrarCliente(string identificacion)
+
+        //Metodo para buscar un cliente por el numero de identificación
+        public DataTable buscarCliente(string identificacion)
         {
-            DataTable DtResultado = new DataTable("cliente_identificacion");
-            //SqlConnection SqlCon = new SqlConnection();
-            CDConexion conn = new CDConexion();
-            try
-            {
-                //SqlCon.ConnectionString = CDConexion.Cn;s
-                SqlCommand SqlCmd = new SqlCommand();
-                SqlCmd.Connection = conn.AbrirConexion();
-                SqlCmd.CommandText = "sp_buscarClientexIdentificacion";
-                SqlCmd.CommandType = CommandType.StoredProcedure;
-
-                SqlParameter param = new SqlParameter("@identificacion",identificacion);
-                param.SqlDbType = SqlDbType.Char;
-                param.Size = 13;
-                SqlCmd.Parameters.Add(param);
-
-                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
-                SqlDat.Fill(DtResultado);
-
-            }
-            catch (Exception ex)
-            {
-                DtResultado = null;
-            }
-            finally
-            {
-                conn.CerrarConexion();
-            }
-            return DtResultado;
+            CDConexion conexion = new CDConexion();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            SqlParameter param = new SqlParameter("NOMBRE DEL PARAMETRO",Identificacion);
+            parameters.Add(param);
+            string sp = "nombre del procedimiento";
+            return conexion.ConsultarDatosProcedimiento(sp, parameters);
         }
 
         //Metodo para registrar cliente y proveedor
-        public string insertarClienteProveedorD(DCliente_Proveedor cliente_Proveedor)
+        public int insertarClienteProveedorD(DCliente_Proveedor cliente_Proveedor)
         {
-            string rpta = "";
-            SqlConnection SqlCon = new SqlConnection();
-            CDConexion conn = new CDConexion();
-            try
-            {
-                SqlCommand SqlCmd = new SqlCommand();
-                SqlCmd.Connection = conn.AbrirConexion();
-                SqlCmd.CommandText = "sp_registrarClienteProveedor";
-                SqlCmd.CommandType = CommandType.StoredProcedure;
+            
+            CDConexion conexion = new CDConexion();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            SqlParameter param = new SqlParameter();
+            parameters.Add(new SqlParameter("@tipo_identificacion", Tipo_Identificacion));
+            parameters.Add(new SqlParameter("@identificacion", Identificacion));
+            parameters.Add(new SqlParameter("@razon_social", Razon_Social));
+            parameters.Add(new SqlParameter("@nombre_comercial", Nombre_Comercial));
+            parameters.Add(new SqlParameter("@direccion", Direccion));
+            parameters.Add(new SqlParameter("@telefono", Telefono));
+            parameters.Add(new SqlParameter("@email", Email));
+            parameters.Add(new SqlParameter("@tipo_entidad", Tipo_Entidad));
+          /*  SqlParameter outparam = new SqlParameter("@newid", SqlDbType.Int);
+            outparam.Direction = ParameterDirection.Output;
+            parameters.Add();*/
+
+            string sp = "sp_registrarClienteProveedor";
+
+           return conexion.EjecutarConsultaProcedimiento(sp, parameters) == 1 ? 1 : 0;
 
 
-                SqlParameter ParTipoIde = new SqlParameter();
-                ParTipoIde.ParameterName = "@tipo_identificacion";
-                ParTipoIde.SqlDbType = SqlDbType.Char;
-                ParTipoIde.Size = 10;
-                ParTipoIde.Value = cliente_Proveedor.Tipo_Identificacion;
-                SqlCmd.Parameters.Add(ParTipoIde);
 
-                SqlParameter Paridentif = new SqlParameter();
-                Paridentif.ParameterName = "@identificacion";
-                Paridentif.SqlDbType = SqlDbType.Char;
-                Paridentif.Size = 13;
-                Paridentif.Value = cliente_Proveedor.Identificacion;
-                SqlCmd.Parameters.Add(Paridentif);
 
-                SqlParameter ParRsocial = new SqlParameter();
-                ParRsocial.ParameterName = "@razon_social";
-                ParRsocial.SqlDbType = SqlDbType.Char;
-                ParRsocial.Size = 50;
-                ParRsocial.Value = cliente_Proveedor.Razon_Social;
-                SqlCmd.Parameters.Add(ParRsocial);
-
-                SqlParameter ParComercial = new SqlParameter();
-                ParComercial.ParameterName = "@nombre_comercial";
-                ParComercial.SqlDbType = SqlDbType.Char;
-                ParComercial.Size = 50;
-                ParComercial.Value = cliente_Proveedor.Nombre_Comercial;
-                SqlCmd.Parameters.Add(ParComercial);
-
-                SqlParameter ParDireccion = new SqlParameter();
-                ParDireccion.ParameterName = "@direccion";
-                ParDireccion.SqlDbType = SqlDbType.Char;
-                ParDireccion.Size = 100;
-                ParDireccion.Value = cliente_Proveedor.Direccion;
-                SqlCmd.Parameters.Add(ParDireccion);
-
-                SqlParameter ParTelefono = new SqlParameter();
-                ParTelefono.ParameterName = "@telefono";
-                ParTelefono.SqlDbType = SqlDbType.Char;
-                ParTelefono.Size = 15;
-                ParTelefono.Value = cliente_Proveedor.Telefono;
-                SqlCmd.Parameters.Add(ParTelefono);
-
-                SqlParameter ParEmail = new SqlParameter();
-                ParEmail.ParameterName = "@email";
-                ParEmail.SqlDbType = SqlDbType.Char;
-                ParEmail.Size = 50;
-                ParEmail.Value = cliente_Proveedor.Email;
-                SqlCmd.Parameters.Add(ParEmail);
-
-                SqlParameter ParTipoEntidad = new SqlParameter();
-                ParTipoEntidad.ParameterName = "@tipo_entidad";
-                ParTipoEntidad.SqlDbType = SqlDbType.Char;
-                ParTipoEntidad.Size = 15;
-                ParTipoEntidad.Value = cliente_Proveedor.Tipo_Entidad;
-                SqlCmd.Parameters.Add(ParTipoEntidad);
-
-                //Ejecutamos nuestro comando
-                rpta = SqlCmd.ExecuteNonQuery() == 1 ? "OK" : "NO se Ingreso el Registro";
-
-            }
-            catch (Exception ex)
-            {
-                rpta = ex.Message;
-            }
-            finally
-            {
-                if (SqlCon.State == ConnectionState.Open) SqlCon.Close();
-            }
-            return rpta;
-
+            
         }
 
         //Método Mostrar
         public DataTable Mostrar()
         {
-            DataTable DtResultado = new DataTable("cliente_proveedor");
-            SqlConnection SqlCon = new SqlConnection();
-            CDConexion conn = new CDConexion();
-            try
-            {
+             DataTable DtResultado = new DataTable("cliente_proveedor");
+             SqlConnection SqlCon = new SqlConnection();
+             CDConexion conn = new CDConexion();
+             try
+             {
 
-                SqlCommand SqlCmd = new SqlCommand();
-                SqlCmd.Connection = SqlCon;
-                SqlCmd.Connection = conn.AbrirConexion();
-                SqlCmd.CommandText = "sp_mostraDatosClientesProv";
-                SqlCmd.CommandType = CommandType.StoredProcedure;
+                 SqlCommand SqlCmd = new SqlCommand();
+                 SqlCmd.Connection = SqlCon;
+                 SqlCmd.Connection = conn.AbrirConexion();
+                 SqlCmd.CommandText = "sp_mostraDatosClientesProv";
+                 SqlCmd.CommandType = CommandType.StoredProcedure;
 
-                SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
-                SqlDat.Fill(DtResultado);
+                 SqlDataAdapter SqlDat = new SqlDataAdapter(SqlCmd);
+                 SqlDat.Fill(DtResultado);
 
-            }
-            catch (Exception ex)
-            {
-                DtResultado = null;
-            }
-            return DtResultado;
+             }
+             catch (Exception ex)
+             {
+                 DtResultado = null;
+             }
+             return DtResultado;
+
+     
+            
+
+
+
 
         }
 

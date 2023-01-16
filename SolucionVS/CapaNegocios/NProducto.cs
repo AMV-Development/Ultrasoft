@@ -10,16 +10,29 @@ namespace CapaNegocios
 {
     public class NProducto
     {
-        private DProducto dProducto;
+
+        public DataTable buscarProductoCod(int id)
+        {
+            return new DProducto().buscarProductoCod(id);
+        }
+
+        public DataTable buscarProductoNombre(string nombre)
+        {
+            return new DProducto().buscarProductoNombre(nombre);
+        }
+
+
+
+        /*private DProducto dProducto;
 
         public NProducto()
         {
             this.dProducto = new DProducto();
         }
 
-        public DataTable ObtenerProductos(string nombre)
+      /*  public DataTable ObtenerProductos(string nombre)
         {
             return dProducto.ObtenerProductos(nombre);
-        }
+        }*/
     }
 }
