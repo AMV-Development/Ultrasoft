@@ -23,7 +23,7 @@ namespace CapaNegocios
 
 
 
-        /*private DProducto dProducto;
+        //private DProducto dProducto;
 
         public NProducto()
         {
@@ -34,5 +34,6 @@ namespace CapaNegocios
         {
             return dProducto.ObtenerProductos(nombre);
         }*/
+        
     }
 }

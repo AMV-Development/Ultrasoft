@@ -59,6 +59,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="agregar usuario.cs" />
+    <Compile Include="DCompras.cs" />
     <Compile Include="CDAgregarCliente.cs" />
     <Compile Include="CDAgregarProveedor.cs" />
     <Compile Include="CDAgregarTrabajador.cs" />

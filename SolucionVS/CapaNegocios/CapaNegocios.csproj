@@ -68,6 +68,7 @@
     <Compile Include="CN_CompraProducto.cs" />
     <Compile Include="Metrica.cs" />
     <Compile Include="NCliente_Proveedor.cs" />
+    <Compile Include="NCompras.cs" />
     <Compile Include="NEmpleado.cs" />
     <Compile Include="NProducto.cs" />
     <Compile Include="NVenta.cs" />
