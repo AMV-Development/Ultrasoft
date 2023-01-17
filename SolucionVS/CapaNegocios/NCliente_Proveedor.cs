@@ -10,12 +10,16 @@ namespace CapaNegocios
 {
     public class NCliente_Proveedor
     {
-        public DataTable Mostrar(string identificacion)
+
+        //metodo buscar cliente
+        public DataTable BuscarCliente(string identificacion)
         {
-            return new DCliente_Proveedor().MostrarCliente(identificacion);
+            return new DCliente_Proveedor().buscarCliente(identificacion);
         }
 
-        public static string insertarClienteProveedorN(string tipoIdentificacion, string identificacion, string razonSocial,
+
+
+        public static int insertarClienteProveedorN(string tipoIdentificacion, string identificacion, string razonSocial,
             string nombreComercial, string direccion, string telefono, string email, string tipoEntidad)
         {
 
