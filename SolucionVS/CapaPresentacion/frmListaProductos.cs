@@ -29,14 +29,14 @@ namespace CapaPresentacion
 
         private void LoadProducts()
         {
-            try
+          /*  try
             {
                 //this.dgvListaProductos.DataSource = nProducto.ObtenerProductos(txtBuscarProducto.Text);
             } catch(Exception ex)
             {
                 Console.WriteLine(ex.Message);
             }
-            
+            */
         }
 
 
