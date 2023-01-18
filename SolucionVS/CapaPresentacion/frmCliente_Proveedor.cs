@@ -60,11 +60,11 @@ namespace CapaPresentacion
         private void btnRegistrar_Click_1(object sender, EventArgs e)
         {
             
-            string Rpta = "";
+           int Rpta;
             Rpta = NCliente_Proveedor.insertarClienteProveedorN(cmbTipoIdentidaad.Text, txtIdentificacion.Text, txtRazonSocial.Text,
                 txtNomComercial.Text, txtDireccion.Text, txtTelefono.Text, txtEmail.Text, cmbTipoEntidad.Text);
 
-            if (Rpta.Equals("OK"))
+            if (Rpta.Equals(1))
             {
 
                 MessageBox.Show("Se insertó de forma correcta el registro");
@@ -74,7 +74,7 @@ namespace CapaPresentacion
             else
             {
                 //Mostramos el mensaje de error
-                MessageBox.Show(Rpta);
+                MessageBox.Show("no se inserto");
             }
         }
 
