@@ -27,7 +27,7 @@ namespace CapaNegocios
 
         public NProducto()
         {
-            this.dProducto = new DProducto();
+            //this.dProducto = new DProducto();
         }
 
       /*  public DataTable ObtenerProductos(string nombre)
