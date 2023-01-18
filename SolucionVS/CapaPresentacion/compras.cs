@@ -268,7 +268,12 @@ namespace CapaPresentacion
         private void Compras_Load(object sender, EventArgs e)
         {
             button3.Visible = false;
-            ListaProducto();
+            //ListaProducto();
+            NCompras nCompras = new NCompras();
+            //comboBox1.DataSource = nCompras.CN_CargarProducto();
+            comboBox1.DataSource = nCompras.CN_CargarProveedor();
+            comboBox1.DisplayMember = "RAZON_SOCIAL";
+            comboBox1.ValueMember = "ID_CLIENTE_PROVEEDOR";
             dtgbusqueda2.Visible = false;
             txtSuma.Visible = false;
             label12.Visible = false;

@@ -12,10 +12,10 @@ namespace CapaNegocios
     {
 
         //metodo buscar cliente
-        public DataTable BuscarCliente(string identificacion)
+        /*public DataTable BuscarCliente(string identificacion)
         {
             return new DCliente_Proveedor().buscarCliente(identificacion);
-        }
+        }*/
 
 
 

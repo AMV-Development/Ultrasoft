@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.ReportingServices.ReportProcessing.ReportObjectModel;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
@@ -59,13 +60,16 @@ namespace CapaDeDatos
 
 
         //Metodo para buscar un cliente por el numero de identificación
-        public DataTable buscarCliente(string identificacion)
+        public DataTable CN_BuscarClienteProveedor(string tipo_entidad)
         {
             CDConexion conexion = new CDConexion();
             List<SqlParameter> parameters = new List<SqlParameter>();
-            SqlParameter param = new SqlParameter("NOMBRE DEL PARAMETRO",Identificacion);
+            SqlParameter param = new SqlParameter();
+            param = new SqlParameter("@tipo_entidad", tipo_entidad);
             parameters.Add(param);
-            string sp = "nombre del procedimiento";
+
+            string sp = "sp_BuscarClienteProveedor";
+
             return conexion.ConsultarDatosProcedimiento(sp, parameters);
         }
 

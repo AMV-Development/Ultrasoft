@@ -10,20 +10,23 @@ namespace CapaNegocios
 {
     public class NCompras
     {
-        DCompras nCompras = new DCompras();
+        readonly DCliente_Proveedor dCliente_Proveedor = new DCliente_Proveedor();
+        readonly DCompras dCompras = new DCompras();
         public DataTable CN_CargarProveedor()
         {
-            return nCompras.CD_MostrarProveedor();
+            return dCliente_Proveedor.CN_BuscarClienteProveedor("P");
         }
 
         public DataTable CN_CargarProducto()
         {
-            return nCompras.CD_MostrarProveedor();
+            return dCompras.CD_MostrarProducto();
         }
 
-        public DataTable CN_AgregarCompra(int codigo, string nombreProducto, double precioUnitario, double cantidadBruta, double cantidadNeta)
+        public DataTable CN_AgregarCompra(int codigo, string nombreProducto, double precioUnitario,
+                                          double cantidadBruta, double cantidadNeta, string metrica,
+                                          string fecha)
         {
-            return nCompras.CD_InsertarCompra();
+            return dCompras.CD_InsertarCompra();
         }
     }
 }
