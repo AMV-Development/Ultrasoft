@@ -10,9 +10,7 @@ select
 	P.FECHA_ELIMINACION  
 from PRODUCTO as p inner join METRICA as m 
 on p.ID_METRICA= m.ID_METRICA
-where
-	p.ID_PRODUCTO Like '%'+@aBuscar+'%' or 
-	p.NOMBRE_PRODUCTO LIKE '%'+@aBuscar+'%'
+where	p.NOMBRE_PRODUCTO LIKE '%'+@aBuscar+'%'
 end
 go
 
