@@ -10,7 +10,7 @@ namespace CapaNegocios
 {
     public class NVenta
     {
-        public static int insertarVenta(int idCliente, int idEmpleado, int secuencia, DateTime fecha, DataTable dtDetalle)
+       /* public static int insertarVenta(int idCliente, int idEmpleado, int secuencia, DateTime fecha, DataTable dtDetalle)
         {
             
                 DVenta venta = new DVenta();
@@ -28,8 +28,8 @@ namespace CapaNegocios
                     detalle.DescUnitario = decimal.Parse(row["descuentoUnitario"].ToString());
                     detalles.Add(detalle);
                 }
-                return venta.InsertarVenta(venta, detalles);
-        }
+                //return venta.InsertarVenta(venta, detalles);
+        }*/
     }
 }
 

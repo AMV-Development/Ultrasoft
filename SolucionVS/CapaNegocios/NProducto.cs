@@ -11,15 +11,17 @@ namespace CapaNegocios
     public class NProducto
     {
 
-        public DataTable buscarProductoCod(int id)
-        {
-            return new DProducto().buscarProductoCod(id);
-        }
+       
 
         public DataTable buscarProductoNombre(string nombre)
         {
             return new DProducto().buscarProductoNombre(nombre);
         }
+
+
+
+
+
 
 
 

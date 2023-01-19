@@ -59,11 +59,11 @@ namespace CapaDeDatos
 
 
         //Metodo para buscar un cliente por el numero de identificación
-        public DataTable buscarCliente(string identificacion)
+        public DataTable buscarCliente(string dato)
         {
             CDConexion conexion = new CDConexion();
             List<SqlParameter> parameters = new List<SqlParameter>();
-            SqlParameter param = new SqlParameter("NOMBRE DEL PARAMETRO",Identificacion);
+            SqlParameter param = new SqlParameter("NOMBRE DEL PARAMETRO",dato);
             parameters.Add(param);
             string sp = "nombre del procedimiento";
             return conexion.ConsultarDatosProcedimiento(sp, parameters);

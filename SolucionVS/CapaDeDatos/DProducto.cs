@@ -51,24 +51,13 @@ namespace CapaDeDatos
         public decimal PrecioVenta { get => precioVenta; set => precioVenta = value; }
         public char Estado { get => estado; set => estado = value; }
 
-
-        public DataTable buscarProductoCod(int id)
-        {
-            CDConexion conexion = new CDConexion();
-            List<SqlParameter> parameters = new List<SqlParameter>();
-            SqlParameter param = new SqlParameter("NOMBRE DEL PARAMETRO",IdProducto);
-            parameters.Add(param);
-            string sp = "nombre del procedimiento";
-            return conexion.ConsultarDatosProcedimiento(sp, parameters);
-        }
-
         public DataTable buscarProductoNombre(string nombre)
         {
             CDConexion conexion = new CDConexion();
             List<SqlParameter> parameters = new List<SqlParameter>();
             SqlParameter param = new SqlParameter("NOMBRE DEL PARAMETRO", NombreProducto);
             parameters.Add(param);
-            string sp = "nombre del procedimiento";
+            string sp = "sp_buscarProducto";
             return conexion.ConsultarDatosProcedimiento(sp, parameters);
         }
 
