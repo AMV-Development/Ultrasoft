@@ -595,3 +595,6 @@ C:\Users\Alexander Vega\OneDrive\Documentos\UTEQ\OCTAVO SEMESTRE\GESTIÓN DE LA 
 C:\Users\Alexander Vega\OneDrive\Documentos\UTEQ\OCTAVO SEMESTRE\GESTIÓN DE LA CONFIGURACIÓN DE SOFTWARE\Ultrasoft\SolucionVS\CapaPresentacion\bin\Debug\Microsoft.VisualBasic.PowerPacks.xml
 C:\Users\Alexander Vega\OneDrive\Documentos\UTEQ\OCTAVO SEMESTRE\GESTIÓN DE LA CONFIGURACIÓN DE SOFTWARE\Ultrasoft\SolucionVS\CapaPresentacion\bin\Debug\CapaDeDatos.pdb
 C:\Users\Alexander Vega\OneDrive\Documentos\UTEQ\OCTAVO SEMESTRE\GESTIÓN DE LA CONFIGURACIÓN DE SOFTWARE\Ultrasoft\SolucionVS\CapaPresentacion\obj\Debug\CapaPresentacion.csproj.CopyComplete
+C:\Users\Ricardo\Documents\GitHub\Ultrasoft\SolucionVS\CapaPresentacion\obj\Debug\CapaPresentacion.frmCompras.resources
+C:\Users\Ricardo\Documents\GitHub\Ultrasoft\SolucionVS\CapaPresentacion\obj\Debug\CapaPresentacion.frmListaProductos.resources
+C:\Users\Ricardo\Documents\GitHub\Ultrasoft\SolucionVS\CapaPresentacion\obj\Debug\CapaPresentacion.frmRegistroProducto.resources
