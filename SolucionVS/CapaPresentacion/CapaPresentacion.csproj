@@ -719,6 +719,10 @@
     <None Include="Resources\descarga.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDeDatos\CapaDeDatos.csproj">
+      <Project>{D56B2CBF-3110-4D53-90F7-C8F5D2B72E96}</Project>
+      <Name>CapaDeDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaNegocios\CapaNegocios.csproj">
       <Project>{2983cc67-22af-40a2-ae74-89ba19afcdfe}</Project>
       <Name>CapaNegocios</Name>

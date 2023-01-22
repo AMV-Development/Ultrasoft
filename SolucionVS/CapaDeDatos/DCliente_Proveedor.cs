@@ -60,13 +60,12 @@ namespace CapaDeDatos
 
 
         //Metodo para buscar un cliente por el numero de identificación
-        public DataTable CN_BuscarClienteProveedor(string tipo_entidad)
+        public DataTable BuscarClienteProveedor(string dato, string tipo_entidad)
         {
             CDConexion conexion = new CDConexion();
             List<SqlParameter> parameters = new List<SqlParameter>();
-            SqlParameter param = new SqlParameter();
-            param = new SqlParameter("@tipo_entidad", tipo_entidad);
-            parameters.Add(param);
+            parameters.Add(new SqlParameter("@aBuscar", dato));
+            parameters.Add(new SqlParameter("@tipoEntidad", tipo_entidad));
 
             string sp = "sp_BuscarClienteProveedor";
 

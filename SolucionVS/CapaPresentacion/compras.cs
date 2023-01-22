@@ -269,9 +269,9 @@ namespace CapaPresentacion
         {
             button3.Visible = false;
             //ListaProducto();
-            NCompras nCompras = new NCompras();
+            NCompra nCompras = new NCompra();
             //comboBox1.DataSource = nCompras.CN_CargarProducto();
-            comboBox1.DataSource = nCompras.CN_CargarProveedor();
+            comboBox1.DataSource = nCompras.BuscarProveedor();
             comboBox1.DisplayMember = "RAZON_SOCIAL";
             comboBox1.ValueMember = "ID_CLIENTE_PROVEEDOR";
             dtgbusqueda2.Visible = false;
@@ -393,57 +393,58 @@ namespace CapaPresentacion
 
         private void button2_Click(object sender, EventArgs e)
         {
-             DialogResult opcion;
-             opcion = MessageBox.Show("TOTAL A PAGAR: " + totpa.ToString("N2") + " ¿Desea imprimir la factura?", "Compra", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-                if (opcion == DialogResult.OK)
-                {
-                    REPORTEFACTURACOMPRA frm = new REPORTEFACTURACOMPRA();
-                    frm.Num_Venta = Convert.ToInt32(comboBox2.SelectedValue);
-                    frm.ShowDialog();
-                    comboBox1.Text = "";
-                    F1 = 0;
-                    cont = 1;
-                    F2 = 2;
-                    totpa = 0;
-                    emergente = 0;
-                    textBox1.Enabled = true;
-                    textBox3.Enabled = true;
-                    textBox2.Enabled = true;
-                    textBox2.Clear();
-                    textBox1.Clear();
-                    textBox4.Clear();
-                    textBox5.Clear();
-                    textBox3.Clear();
-                    dataGridView1.Rows.Clear();
-                    dtgBusqueda.Rows.Clear();
-                    pictureBox1.Visible = true;
-                    dataGridView2.Visible = false;
-                    dtgBusqueda.Visible = true;
-                }
-                else
-                {
-                    comboBox1.Text = "";
-                    F1 = 0;
-                    cont = 1;
-                    F2 = 2;
-                    totpa = 0;
-                    emergente = 0;
-                    textBox1.Enabled = true;
-                    textBox3.Enabled = true;
-                    textBox2.Enabled = true;
-                    textBox2.Clear();
-                    textBox1.Clear();
-                    textBox4.Clear();
-                    textBox5.Clear();
-                    textBox3.Clear();
-                    dataGridView1.Rows.Clear();
-                    dtgBusqueda.Rows.Clear();
-                    pictureBox1.Visible = true;
-                    dataGridView2.Visible = false;
-                    label12.Visible = false;
-                    txtSuma.Visible = false;
-                    dtgBusqueda.Visible = true;
-                }
+            NCompra
+             //DialogResult opcion;
+             //opcion = MessageBox.Show("TOTAL A PAGAR: " + totpa.ToString("N2") + " ¿Desea imprimir la factura?", "Compra", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+             //   if (opcion == DialogResult.OK)
+             //   {
+             //       REPORTEFACTURACOMPRA frm = new REPORTEFACTURACOMPRA();
+             //       frm.Num_Venta = Convert.ToInt32(comboBox2.SelectedValue);
+             //       frm.ShowDialog();
+             //       comboBox1.Text = "";
+             //       F1 = 0;
+             //       cont = 1;
+             //       F2 = 2;
+             //       totpa = 0;
+             //       emergente = 0;
+             //       textBox1.Enabled = true;
+             //       textBox3.Enabled = true;
+             //       textBox2.Enabled = true;
+             //       textBox2.Clear();
+             //       textBox1.Clear();
+             //       textBox4.Clear();
+             //       textBox5.Clear();
+             //       textBox3.Clear();
+             //       dataGridView1.Rows.Clear();
+             //       dtgBusqueda.Rows.Clear();
+             //       pictureBox1.Visible = true;
+             //       dataGridView2.Visible = false;
+             //       dtgBusqueda.Visible = true;
+             //   }
+             //   else
+             //   {
+             //       comboBox1.Text = "";
+             //       F1 = 0;
+             //       cont = 1;
+             //       F2 = 2;
+             //       totpa = 0;
+             //       emergente = 0;
+             //       textBox1.Enabled = true;
+             //       textBox3.Enabled = true;
+             //       textBox2.Enabled = true;
+             //       textBox2.Clear();
+             //       textBox1.Clear();
+             //       textBox4.Clear();
+             //       textBox5.Clear();
+             //       textBox3.Clear();
+             //       dataGridView1.Rows.Clear();
+             //       dtgBusqueda.Rows.Clear();
+             //       pictureBox1.Visible = true;
+             //       dataGridView2.Visible = false;
+             //       label12.Visible = false;
+             //       txtSuma.Visible = false;
+             //       dtgBusqueda.Visible = true;
+             //   }
         }
 
         private void dtgbusqueda2_CellContentClick(object sender, DataGridViewCellEventArgs e)
