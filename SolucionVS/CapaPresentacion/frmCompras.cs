@@ -16,6 +16,7 @@ namespace CapaPresentacion
     {
         NCompras Compras;
         NCliente_Proveedor Proveedor;
+        DataTable dt = new DataTable();
 
         public frmCompras()
         {
@@ -35,9 +36,13 @@ namespace CapaPresentacion
             cboProducto.DisplayMember = "NOMBRE_PRODUCTO";
             cboProducto.ValueMember = "ID_PRODUCTO";
 
+            cboProducto.SelectedIndex = -1;
+
             cboProveedor.DataSource = Compras.CN_CargarProveedor();
             cboProveedor.DisplayMember = "NOMBRE_COMERCIAL";
             cboProveedor.ValueMember = "ID_CLIENTE_PROVEEDOR";
+
+            cboProveedor.SelectedIndex = -1;
         }
 
         private void cboProducto_SelectedIndexChanged(object sender, EventArgs e)
@@ -48,7 +53,9 @@ namespace CapaPresentacion
         private void cboProducto_SelectionChangeCommitted(object sender, EventArgs e)
         {
             int producto_id = Convert.ToInt32(cboProducto.SelectedValue);
-            cargarPrecio(producto_id);
+            dt = Compras.CN_BuscarPrecioMetrica(producto_id);
+            txtPrecio.Text = dt.Rows[0][1].ToString();
+            txtMetrica.Text = dt.Rows[0][0].ToString();
         }
 
         private void cargarPrecio(int producto_id)

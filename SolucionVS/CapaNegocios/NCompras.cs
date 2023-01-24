@@ -12,6 +12,16 @@ namespace CapaNegocios
     {
         readonly DCliente_Proveedor dCliente_Proveedor = new DCliente_Proveedor();
         readonly DCompras dCompras = new DCompras();
+
+        //  Made by ChurriGOD
+        readonly DProducto dProducto = new DProducto();
+        
+
+        public DataTable CN_BuscarPrecioMetrica(int id_producto)
+        {
+            return dProducto.buscarPrecioMetrica(id_producto);
+        }
+        //  Made by ChurriGOD
         public DataTable CN_CargarProveedor()
         {
             return dCliente_Proveedor.CN_BuscarClienteProveedor("P");

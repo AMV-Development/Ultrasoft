@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.txtMetrica = new System.Windows.Forms.TextBox();
@@ -56,12 +56,12 @@
             this.label1 = new System.Windows.Forms.Label();
             this.cboProveedor = new System.Windows.Forms.ComboBox();
             this.cboPrecio = new System.Windows.Forms.ComboBox();
-            this.ID_DETALLE_COMPRA = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre_Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Metrica = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio_Unitario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SubTotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID_PRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NOMBRE_PRODUCTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.METRICA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UNIDADES_BRUTO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.UNIDADES_NETO = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.PRECIO_UNITARIO = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDetalleCompra)).BeginInit();
             this.SuspendLayout();
             // 
@@ -132,7 +132,7 @@
             this.BtnRegistrarProducto.Font = new System.Drawing.Font("Segoe UI Emoji", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.BtnRegistrarProducto.Location = new System.Drawing.Point(137, 332);
             this.BtnRegistrarProducto.Name = "BtnRegistrarProducto";
-            this.BtnRegistrarProducto.Size = new System.Drawing.Size(168, 40);
+            this.BtnRegistrarProducto.Size = new System.Drawing.Size(156, 40);
             this.BtnRegistrarProducto.TabIndex = 63;
             this.BtnRegistrarProducto.Text = "Agregar Producto";
             this.BtnRegistrarProducto.UseVisualStyleBackColor = true;
@@ -181,22 +181,23 @@
             // 
             // dgvDetalleCompra
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dgvDetalleCompra.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvDetalleCompra.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDetalleCompra.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvDetalleCompra.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID_DETALLE_COMPRA,
-            this.Nombre_Producto,
-            this.Cantidad,
-            this.Metrica,
-            this.Precio_Unitario,
-            this.SubTotal});
+            this.ID_PRODUCTO,
+            this.NOMBRE_PRODUCTO,
+            this.METRICA,
+            this.UNIDADES_BRUTO,
+            this.UNIDADES_NETO,
+            this.PRECIO_UNITARIO});
             this.dgvDetalleCompra.Location = new System.Drawing.Point(435, 150);
             this.dgvDetalleCompra.Name = "dgvDetalleCompra";
             this.dgvDetalleCompra.RowHeadersVisible = false;
@@ -359,41 +360,36 @@
             this.cboPrecio.TabIndex = 71;
             this.cboPrecio.Visible = false;
             // 
-            // ID_DETALLE_COMPRA
+            // ID_PRODUCTO
             // 
-            this.ID_DETALLE_COMPRA.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.ID_DETALLE_COMPRA.HeaderText = "Código ";
-            this.ID_DETALLE_COMPRA.Name = "ID_DETALLE_COMPRA";
+            this.ID_PRODUCTO.HeaderText = "ID Producto";
+            this.ID_PRODUCTO.Name = "ID_PRODUCTO";
+            this.ID_PRODUCTO.Visible = false;
             // 
-            // Nombre_Producto
+            // NOMBRE_PRODUCTO
             // 
-            this.Nombre_Producto.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Nombre_Producto.HeaderText = "Nombre Producto";
-            this.Nombre_Producto.Name = "Nombre_Producto";
+            this.NOMBRE_PRODUCTO.HeaderText = "Producto";
+            this.NOMBRE_PRODUCTO.Name = "NOMBRE_PRODUCTO";
             // 
-            // Cantidad
+            // METRICA
             // 
-            this.Cantidad.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Cantidad.HeaderText = "Cantidad";
-            this.Cantidad.Name = "Cantidad";
+            this.METRICA.HeaderText = "Métrica";
+            this.METRICA.Name = "METRICA";
             // 
-            // Metrica
+            // UNIDADES_BRUTO
             // 
-            this.Metrica.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Metrica.HeaderText = "Métrica";
-            this.Metrica.Name = "Metrica";
+            this.UNIDADES_BRUTO.HeaderText = "Unidades Bruto";
+            this.UNIDADES_BRUTO.Name = "UNIDADES_BRUTO";
             // 
-            // Precio_Unitario
+            // UNIDADES_NETO
             // 
-            this.Precio_Unitario.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Precio_Unitario.HeaderText = "Precio";
-            this.Precio_Unitario.Name = "Precio_Unitario";
+            this.UNIDADES_NETO.HeaderText = "Unidades Neto";
+            this.UNIDADES_NETO.Name = "UNIDADES_NETO";
             // 
-            // SubTotal
+            // PRECIO_UNITARIO
             // 
-            this.SubTotal.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.SubTotal.HeaderText = "SubTotal";
-            this.SubTotal.Name = "SubTotal";
+            this.PRECIO_UNITARIO.HeaderText = "Precio Unitario";
+            this.PRECIO_UNITARIO.Name = "PRECIO_UNITARIO";
             // 
             // frmCompras
             // 
@@ -467,11 +463,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox cboProveedor;
         private System.Windows.Forms.ComboBox cboPrecio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID_DETALLE_COMPRA;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre_Producto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Metrica;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio_Unitario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn SubTotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID_PRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NOMBRE_PRODUCTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn METRICA;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UNIDADES_BRUTO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn UNIDADES_NETO;
+        private System.Windows.Forms.DataGridViewTextBoxColumn PRECIO_UNITARIO;
     }
 }

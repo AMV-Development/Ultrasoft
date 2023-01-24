@@ -51,6 +51,17 @@ namespace CapaDeDatos
         public decimal PrecioVenta { get => precioVenta; set => precioVenta = value; }
         public char Estado { get => estado; set => estado = value; }
 
+        //  Made by ChurriGOD
+        public DataTable buscarPrecioMetrica(int id_producto)
+        {
+            CDConexion conexion = new CDConexion();
+            List<SqlParameter> parameters = new List<SqlParameter>();
+            SqlParameter param = new SqlParameter("@id_producto", id_producto);
+            parameters.Add(param);
+            string sp = "sp_BuscarPrecioMetrica";
+            return conexion.ConsultarDatosProcedimiento(sp, parameters);
+        }
+        //  Made by ChurriGOD
 
         public DataTable buscarProductoCod(int id)
         {
